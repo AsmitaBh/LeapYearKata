@@ -40,9 +40,10 @@ public class LeapYearTest {
 		assertTrue(leapYear.isLeapYear(year));
 	}
 	
-	@Test
-    public void whenNotDivisibleBy4ThenNonLeapYear(){
-        assertFalse(leapYear.isLeapYear(2017));
+	@ParameterizedTest
+	@ValueSource(ints = { 2017, 2018, 2019 })
+    public void whenNotDivisibleBy4ThenNonLeapYear(int year){
+        assertFalse(leapYear.isLeapYear(year));
     }
 
 }
