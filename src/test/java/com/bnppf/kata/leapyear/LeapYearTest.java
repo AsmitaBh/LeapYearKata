@@ -17,9 +17,10 @@ public class LeapYearTest {
 		leapYear = new LeapYear();
 	}
 	
-	@Test
-	public void when2000ThenLeapYear() {
-		assertTrue(leapYear.isLeapYear(2000));
+	@ParameterizedTest
+	@ValueSource(ints = { 2000, 2400 })
+	public void whenDivisibleBy400ThenLeapYear(int year) {
+		assertTrue(leapYear.isLeapYear(year));
 	}
 	
 	@Test
