@@ -3,7 +3,7 @@ package com.bnppf.kata.leapyear;
 public class LeapYear {
 
 	public boolean isLeapYear(int year) {
-		return true;
+		return year%400 == 0;
 	}
 
 }
