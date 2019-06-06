@@ -1,5 +1,7 @@
 package com.bnppf.kata.leapyear;
 
+import static com.bnppf.kata.leapyear.DivisionBase.*;
+
 public class LeapYear {
 
 	public boolean isLeapYear(int year) {
@@ -7,15 +9,15 @@ public class LeapYear {
 	}
 
 	private boolean isNotMiltipleOf100(int year) {
-		return year%100 != 0;
+		return year % HUNDRED.getBase() != 0;
 	}
 
 	private boolean isMultipleOf4(int year) {
-		return year%4 == 0;
+		return year % FOUR.getBase() == 0;
 	}
 
 	private boolean isMultipleOf400(int year) {
-		return year%400 == 0;
+		return year % FOUR_HUNDRED.getBase() == 0;
 	}
 
 }
